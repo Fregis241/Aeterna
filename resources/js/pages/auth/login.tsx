@@ -30,6 +30,10 @@ export default function Login({ status, canResetPassword }: Props) {
             passwordInput.dispatchEvent(new Event('input', { bubbles: true }));
             passwordInput.dispatchEvent(new Event('change', { bubbles: true }));
         }
+        const form = emailInput?.closest('form');
+        if (form) {
+            setTimeout(() => form.requestSubmit(), 50);
+        }
     };
 
     return (
